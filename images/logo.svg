@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="56" viewBox="0 0 220 56" role="img" aria-labelledby="title">
+  <title id="title">MiltoClinica</title>
+
+  <!-- Emblema: círculo azul com cruz branca e traço de batimento -->
+  <g transform="translate(12,4)">
+    <circle cx="24" cy="24" r="20" fill="#0b6cf3" />
+    <!-- Cruz médica branca -->
+    <path d="M24 14v8h8v4h-8v8h-4v-8h-8v-4h8v-8z" fill="#ffffff" />
+    <!-- Traçado de batimento (pequeno) dentro do círculo -->
+    <path d="M8 30 L14 18 L18 30 L22 22 L26 30 L34 18" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Texto da marca em azul -->
+  <text x="64" y="34" fill="#0b6cf3" font-family="Segoe UI, Roboto, Arial, sans-serif" font-weight="700" font-size="20">MiltoClinica</text>
+</svg>

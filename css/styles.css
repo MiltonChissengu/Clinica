@@ -1,0 +1,67 @@
+/* Reset e variáveis */
+:root{
+	--primary:#0b6cf3;
+	--accent:#16a085;
+	--bg:#f6f8fa;
+	--text:#23313f;
+	--muted:#6b7a86;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	background:var(--bg);color:var(--text);line-height:1.45;
+}
+.container{max-width:1000px;margin:0 auto;padding:1rem}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid #e6eef6}
+.site-header .container{display:flex;align-items:center;gap:1rem}
+.logo{height:48px}
+.nav{margin-left:auto}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.nav-list a{color:var(--text);text-decoration:none;padding:.5rem .75rem;border-radius:6px}
+.nav-list a:hover{background:rgba(11,108,243,0.08)}
+.nav-toggle{display:none;border:0;background:none;font-size:1.25rem}
+
+/* Hero */
+.hero{padding:4rem 0;background:linear-gradient(135deg, rgba(11,108,243,0.06), rgba(22,160,133,0.03));border-bottom:1px solid #eaf2f5}
+.hero .container{display:flex;align-items:center;gap:2rem;}
+.hero-content{flex:1}
+.hero-illustration{flex:1;display:flex;justify-content:center;align-items:center}
+
+/* Apenas a imagem terá tamanho médio - não aumenta a largura da seção */
+.hero-illustration img{
+	width:auto;
+	max-width:420px; /* largura máxima para não ultrapassar o espaço */
+	height:360px; /* altura média desejada */
+	object-fit:cover;
+	border-radius:12px;
+	box-shadow:0 12px 34px rgba(35,49,63,0.08);
+}
+
+@media (max-width:800px){
+	.nav-list{display:none}
+	.nav-toggle{display:inline-block}
+	.cards{grid-template-columns:1fr}
+	.hero h1{font-size:1.5rem}
+	.hero .container{flex-direction:column}
+	.hero-illustration{order:2}
+	.hero-content{order:1;text-align:center}
+	.hero-illustration img{height:240px;max-width:80%;}
+}
+.nav.open .nav-list{display:flex;flex-direction:column;background:#fff;padding:0.5rem;border-radius:8px;position:absolute;right:1rem;top:64px;box-shadow:0 8px 24px rgba(35,49,63,0.12)}
+
+/* Services */
+.services h2,.about h2,.contact h2{margin-top:1.25rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.card{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(35,49,63,0.06)}
+
+/* Contact form */
+.contact form{display:grid;gap:.5rem;margin-top:1rem}
+.contact label{display:block;font-size:.95rem;color:var(--muted)}
+.contact input,.contact textarea{width:100%;padding:.6rem;border:1px solid #dbe9f3;border-radius:6px}
+.contact textarea{min-height:120px}
+
+/* Footer */
+.site-footer{padding:1rem 0;margin-top:2rem;text-align:center;color:var(--muted);font-size:.9rem}
