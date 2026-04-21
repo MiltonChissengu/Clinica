@@ -1,10 +1,10 @@
 /* Reset e variáveis */
 :root{
-	--primary:#0b6cf3;
-	--accent:#16a085;
-	--bg:#f6f8fa;
-	--text:#23313f;
-	--muted:#6b7a86;
+	--primary:#0b3d91; /* azul escuro */
+	--accent:#70aef7;  /* azul claro */
+	--bg:#f3f7ff;      /* fundo azul muito claro / quase branco */
+	--text:#07224a;    /* texto azul escuro */
+	--muted:#5b7090;   /* tom suave para textos secundários */
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -15,13 +15,13 @@ body{
 .container{max-width:1000px;margin:0 auto;padding:1rem}
 
 /* Header */
-.site-header{background:#fff;border-bottom:1px solid #e6eef6}
+.site-header{background:#fff;border-bottom:1px solid rgba(11,61,145,0.06)}
 .site-header .container{display:flex;align-items:center;gap:1rem}
 .logo{height:48px}
 .nav{margin-left:auto}
 .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
 .nav-list a{color:var(--text);text-decoration:none;padding:.5rem .75rem;border-radius:6px}
-.nav-list a:hover{background:rgba(11,108,243,0.08)}
+.nav-list a:hover{background:rgba(11,61,145,0.06)}
 .nav-toggle{display:none;border:0;background:none;font-size:1.25rem}
 
 /* Hero */
@@ -68,9 +68,22 @@ body{
 .nav.open .nav-list{display:flex;flex-direction:column;background:#fff;padding:0.5rem;border-radius:8px;position:absolute;right:1rem;top:64px;box-shadow:0 8px 24px rgba(35,49,63,0.12)}
 
 /* Services */
-.services h2,.about h2,.contact h2{margin-top:1.25rem}
+.services h2,.about h2,.contact h2,.professionals h2{margin-top:1.25rem;text-align: center;}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
 .card{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(35,49,63,0.06)}
+
+/* Serviços - grade */
+.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.service-cards .card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:.6rem}
+.service-cards .card h3{margin:.25rem 0}
+.service-cards .card p{color:var(--muted);font-size:.95rem}
+
+@media (max-width:1000px){
+	.service-cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+	.service-cards{grid-template-columns:1fr}
+}
 
 /* Contact form */
 .contact form{display:grid;gap:.5rem;margin-top:1rem}
@@ -94,12 +107,57 @@ body{
 #contactForm button.btn:focus-visible{outline:3px solid rgba(11,108,243,0.18);outline-offset:3px}
 
 /* Contact info */
-.contact .contact-info{display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1rem}
-.contact .hours{background:#fff;padding:.75rem;border-radius:8px;box-shadow:0 6px 18px rgba(35,49,63,0.04)}
-.contact .hours strong{display:block;margin-bottom:.5rem}
+.contact .contact-info{display:flex;gap:1rem;align-items:stretch;margin-bottom:1rem}
+.contact .contact-info > div{
+	flex:1;
+	background:#fff;
+	padding:.75rem;
+	border-radius:8px;
+	box-shadow:0 6px 18px rgba(35,49,63,0.04);
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	transition:transform .18s ease, box-shadow .18s ease, border-left-color .18s ease;
+	border-left:4px solid transparent; /* barra lateral para destaque no hover */
+}
+.contact .contact-info > div:hover{
+	transform:translateY(-6px);
+	box-shadow:0 18px 36px rgba(35,49,63,0.12);
+	border-left-color:var(--primary);
+}
+.contact .contact-info > div:focus-within{
+	outline:3px solid rgba(11,108,243,0.08);
+	outline-offset:4px;
+}
+.contact .contact-info strong{display:block;margin-bottom:.5rem}
+.contact .hours p{text-align: left;}
+.contact .hours p span{font-weight: 600;}
+.contact-info .address-block p.address{color:black;}
+.contact .contact-info .phones{font-weight:700;margin:0}
+.contact .contact-info .address{margin:0;color:var(--muted)}
+
+@media (max-width:900px){
+	.contact .contact-info{flex-direction:column}
+}
 
 /* Footer */
-.site-footer{padding:1rem 0;margin-top:2rem;text-align:center;color:var(--muted);font-size:.9rem}
+.site-footer{background:#07224a;color:#fff;padding:2rem 0 1rem;margin-top:2rem}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;align-items:start}
+.logo-footer{height:44px;margin-bottom:.5rem}
+.footer-brand p{margin:0;color:rgba(255,255,255,0.9)}
+.footer-nav h4,.footer-contact h4{margin:0 0 .5rem;color:var(--accent)}
+.footer-nav ul{list-style:none;padding:0;margin:0}
+.footer-nav ul li{margin:0.35rem 0}
+.footer-nav ul li a{color:rgba(255,255,255,0.9);text-decoration:none}
+.footer-nav ul li a:hover{text-decoration:underline}
+.footer-contact p{margin:0.25rem 0;color:rgba(255,255,255,0.9)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:1rem;padding-top:1rem;text-align:center;color:rgba(255,255,255,0.7)}
+
+@media (max-width:800px){
+	.footer-grid{grid-template-columns:1fr;gap:.75rem}
+}
 
 /* Formatação da lista em 'Sobre Nós' (Valores) */
 .about ul{
@@ -175,3 +233,26 @@ body{
 @media (max-width:480px){
 	.whatsapp-btn{right:12px;bottom:12px;padding:.5rem .7rem}
 }
+
+/* Contact form wrapper e título */
+.contact-title{margin-top:1.25rem;text-align:center;color:var(--text)}
+.contact-form-wrap{
+	max-width:520px;
+	margin:0.75rem auto 2rem;
+	padding:26px; /* aumentado em 26px */
+	background:#fff;
+	border-radius:8px;
+	box-shadow:0 22px 54px rgba(7,34,74,0.20); /* sombra mais escura */
+	border-left:4px solid transparent;
+}
+
+@media (max-width:720px){
+	.contact-form-wrap{max-width:100%;padding:16px}
+	.contact-form button.btn{width:100%;align-self:stretch}
+}
+
+/* Footer social links */
+.footer-social{display:flex;gap:.6rem;margin-top:.6rem}
+.social-link{display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;border-radius:8px;background:rgba(255,255,255,0.06);color:inherit;text-decoration:none;transition:background .15s ease, transform .12s ease}
+.social-link svg{width:18px;height:18px}
+.social-link:hover{background:rgba(255,255,255,0.14);transform:translateY(-3px)}
