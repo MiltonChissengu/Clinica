@@ -9,16 +9,17 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
-<body>
+<body> 
 	<header class="site-header">
 		<div class="container">
 			<img src="images/logo.svg" alt="Logo MiltoClínica" class="logo">
 			<nav class="nav" id="nav">
-				<button id="navToggle" class="nav-toggle" aria-label="Abrir menu">☰</button>
-				<ul class="nav-list">
-					<li><a href="#home">Início</a></li>
+				<button id="navToggle" type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navList">☰</button>
+				<ul class="nav-list" id="navList">
+					<li><a href="#">Início</a></li>
 					<li><a href="#servicos">Serviços</a></li>
 					<li><a href="#sobre">Sobre</a></li>
+					<li><a href="#profissionais">Profissionais</a></li>
 					<li><a href="#contato">Contato</a></li>
 				</ul>
 			</nav>
@@ -67,32 +68,32 @@
 			<h2>Nossos Serviços</h2>
 			<div class="cards service-cards">
 				<article class="card">
-					<img src="images/service-1.jpg" alt="Consulta médica" loading="lazy">
+					<img src="images/consulta.jpg" alt="Consulta médica" loading="lazy">
 					<h3>Consulta Médica</h3>
 					<p>Atendimento clínico geral para diagnóstico e acompanhamento do paciente.</p>
 				</article>
 				<article class="card">
-					<img src="images/service-2.jpg" alt="Cardiologia" loading="lazy">
+					<img src="images/cardiologia.png" alt="Cardiologia" loading="lazy">
 					<h3>Cardiologia</h3>
 					<p>Avaliação do sistema cardiovascular e acompanhamento de doenças cardíacas.</p>
 				</article>
 				<article class="card">
-					<img src="images/service-3.jpg" alt="Dermatologia" loading="lazy">
+					<img src="images/dermatologia.jpg" alt="Dermatologia" loading="lazy">
 					<h3>Dermatologia</h3>
 					<p>Diagnóstico e tratamento de doenças de pele, cabelo e unhas.</p>
 				</article>
 				<article class="card">
-					<img src="images/service-4.jpg" alt="Exames laboratoriais" loading="lazy">
+					<img src="images/exame.jpg" alt="Exames laboratoriais" loading="lazy">
 					<h3>Exames Laboratoriais</h3>
 					<p>Coleta e processamento de exames com resultados confiáveis.</p>
 				</article>
 				<article class="card">
-					<img src="images/service-5.jpg" alt="Ortopedia" loading="lazy">
+					<img src="images/ortopedia.jpg" alt="Ortopedia" loading="lazy">
 					<h3>Ortopedia</h3>
 					<p>Tratamentos e reabilitação de lesões músculo-esqueléticas.</p>
 				</article>
 				<article class="card">
-					<img src="images/service-6.jpg" alt="Pediatria" loading="lazy">
+					<img src="images/pediatria.png" alt="Pediatria" loading="lazy">
 					<h3>Pediatria</h3>
 					<p>Cuidado integral para crianças e suporte às famílias.</p>
 				</article>
@@ -127,7 +128,7 @@
 					<p class="pro-bio">Ortopedista focado em reabilitação e tratamentos minimamente invasivos.</p>
 				</article>
 				<article class="pro-card">
-					<img src="images/doctoro4.jpg" alt="Dra. Laura Pinto" loading="lazy">
+					<img src="images/pediatria2.png" alt="Dra. Laura Pinto" loading="lazy">
 					<h4>Dra. Laura Pinto</h4>
 					<p class="pro-specialty">Pediatria</p>
 					<p class="pro-bio">Pediatra dedicada ao cuidado infantil integral e orientação às famílias.</p>
@@ -177,13 +178,20 @@
 			</div>
 		</section>
 
+		<!-- Botão de voltar ao início -->
+		<a class="top-btn" href="#" aria-label="Voltar ao início">
+			<!-- ícone de seta para cima -->
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+				<path d="M12 4l-8 8h5v8h6v-8h5z" />
+			</svg>
+		</a>
+
 		<!-- Botão do WhatsApp -->
 		<a class="whatsapp-btn" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
 			<!-- ícone SVG do WhatsApp -->
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp"
 				viewBox="0 0 16 16">
-				<path
-					d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+				<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
 			</svg>
 		</a>
 	</main>
@@ -207,6 +215,7 @@
 				<h4>Contato</h4>
 				<p>Tel: (11) 99999-9999</p>
 				<p>Email: contato@miltoclinica.com</p>
+				<p>Endereço: Rua Milton, 111 - Campo, Juiz de Fora - MG</p>
 				<!-- Redes sociais -->
 				<div class="footer-social">
 					<a class="social-link" href="https://facebook.com/miltoclinica" target="_blank" rel="noopener" aria-label="Facebook">
